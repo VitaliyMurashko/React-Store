@@ -1,0 +1,35 @@
+.wrapper {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items:flex-start;
+    margin: 30px;
+    border-top: 1px solid black
+
+}
+
+.button{
+    border: 1px solid rgba(3, 27, 248, 0.678)!important;
+}
+
+.button p {
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color:#FFF;
+    text-transform: uppercase;
+}
+
+.wrapper form {
+    text-align: left;
+}
+
+.orderedProduct{
+    border:1px solid lightgray;
+    margin: 20px;
+}
+
+.orderedProduct p {
+ margin: 10px
+}

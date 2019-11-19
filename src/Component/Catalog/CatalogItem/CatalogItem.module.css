@@ -1,0 +1,38 @@
+.card {
+    flex-basis: 200px;
+    margin: 10px 20px;
+    padding:40px 20px;
+    text-align: center;
+    color:black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imgWrapper {
+    min-width: 280px;
+    min-height: 150px;
+}
+
+.card p{
+    flex-grow: 1;
+    font-size:0.8em;
+}
+
+.card button{
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color:rgba(3, 27, 248, 0.678);
+    text-transform: uppercase;
+}
+
+.DisabledBtn button{
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color:rgba(3, 27, 248, 0.678);
+    text-transform: uppercase;
+}

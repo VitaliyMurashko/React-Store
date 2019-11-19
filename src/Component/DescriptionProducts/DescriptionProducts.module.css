@@ -1,0 +1,53 @@
+.wrapper {
+    display: flex;
+    box-sizing: border-box;
+    margin: 100px;
+    flex-wrap: wrap;
+}
+
+.wrapper button {
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    color:rgba(3, 27, 248, 0.678);
+    text-transform: uppercase;
+}
+
+.item {
+    margin: 20px;
+    max-width: 40%;
+}
+
+.item li {
+    background: #FFF!important;
+}
+
+.viewedProductsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 40px;
+}
+
+.viewedProductsWrapper button {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        margin: 20px;
+    }
+
+    .item {
+        max-width: 100%;
+    }
+
+    .viewedProductsWrapper {
+        justify-content: center;
+        margin: 0;
+    }
+}
+
+h3 {
+    color: #3a3737e3;
+}

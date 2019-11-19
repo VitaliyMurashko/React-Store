@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  .header{
+    height: 60px;
+    background: #333;
+    padding: 0 20px;
+    color: #fff;
+  }
+  .logo{
+    line-height: 60px;
+    float: left;
+    text-transform: uppercase;
+  }
+  
+  .menu{
+    line-height: 60px;
+  }
+  .menu a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 20px;
+    transition: 0.4s;
+  }
+  .showMenuBtn,.hideMenuBtn{
+    transition: 0.4s;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+  }
+  .showMenuBtn{
+    float: right;
+  }
+  .showMenuBtn i{
+    line-height: 60px;
+  }
+  .menu a:hover,
+  .showMenuBtn:hover,
+  .hideMenuBtn:hover{
+    color: rgba(3, 27, 248, 0.678);
+  }
+   
+  .content{
+    padding: 0 20px;
+  }
+  .content img{
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+  }
+  .content p{
+    text-align: justify;
+  }
+  
+  @media screen and (max-width:800px) {
+    .showMenuBtn,.hideMenuBtn{
+      display: block;
+    }
+    .menu{
+      z-index: 10000;
+      position: fixed;
+      width: 100%;
+    
+      background: #333;
+      right: -100%;
+      top: 0;
+      text-align: center;
+      padding: 80px 0;
+      line-height: normal;
+      transition: 0.7s;
+    }
+    .menu a{
+      display: block;
+      padding: 20px;
+    }
+    .hideMenuBtn{
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+   
+  }
