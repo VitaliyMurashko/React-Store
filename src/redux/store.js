@@ -3,12 +3,12 @@ import catalogReducer from './Catalog-reducer';
 import { reducer as formReducer } from 'redux-form';
 import thunkMiddleware from 'redux-thunk';
 
-const redusers = combineReducers({
+const reducers = combineReducers({
     catalogPage : catalogReducer,
     form : formReducer
 });
 
-const store = createStore(redusers,applyMiddleware(thunkMiddleware));
+const store = createStore(reducers,applyMiddleware(thunkMiddleware));
 window.store = store
 
 export default store;

@@ -1,6 +1,6 @@
 import React from 'react'
 import CarouselProducts from './CarouselProducts/CarouselProducts'
-import HomeCarousel from '../Home/HomeCarousel/HomeCarousel'
+import HomeCarousel from './HomeCarousel/HomeCarousel'
 import s from './Home.module.css'
 
 const Home = props => {

@@ -1,4 +1,4 @@
-import {ProductApi} from '../api/api';
+import {ProductApi, postDataOrder} from '../api/api';
 
 
 
@@ -9,7 +9,7 @@ const initialState = {
     popularProducts: [],
     currentProduct: [],
     viewedProducts: [],
-    successSend:false
+    orderData: []
 };
 
 const catalogReducer = (state = initialState, action) => {
@@ -80,7 +80,7 @@ const catalogReducer = (state = initialState, action) => {
         case 'SUCCESS_SEND' :
             return {
                 ...state,
-                successSend: !state.successSend
+                orderData: action.order
             }            
         default:
             return state;
@@ -102,19 +102,25 @@ export const HandlerCard = (productsId) => ({type: 'HANDLER_CARD', productsId});
 export const addViewedProducts = (products) => ({type: 'ADD_VIEWED_PRODUCTS', products});
 export const DescriptionHandlerBtn = () => ({type: 'DESCRIPTION_HANDLER_BTN'});
 export const removeProductsFromCard = () => ({type: 'REMOVE_PRODUCTS_FROM_CARD'})
-export const handlerSuccessSend = () => ({type: 'SUCCESS_SEND'})
+export const successSend = (order) => ({type: 'SUCCESS_SEND', order})
 
 export const getCurrentProduct = (matchParamsId) => {
     return (dispatch) => {
         ProductApi.getCurrentProduct(matchParamsId)
-        .then((response) => dispatch(addcurrentProduct(response.data))).catch(err => alert(`Ошибка,поробуйте перезагрузить страницу`)) 
+        .then((response) => dispatch(addcurrentProduct(response.data))).catch(err => alert(`Ошибка,попробуйте перезагрузить страницу`)) 
     }
 };
 
 export const getProduct = () => {
     return (dispatch) => {
-        ProductApi.getProducts().then((response) => dispatch(addProducts(response.data.products))).catch(err => alert(`Ошибка,поробуйте перезагрузить страницу`))
+        ProductApi.getProducts().then((response) => dispatch(addProducts(response.data))).catch(err => alert(`Ошибка,попробуйте перезагрузить страницу`))
     }
 };
+
+export const postOrder = (dataJson) => {
+    return (dispatch) => {
+        postDataOrder(dataJson).then(res => dispatch(successSend(res.data.name))).catch(err => 'что-то пошло не так,попробуйте повторно отправить форму')
+    }
+}
 
 export default catalogReducer;

@@ -57,15 +57,6 @@ const HomeCarousel = props =>{
     }}
   />
   <img
-    src="https://cdn3.hype.ru/1960x/file/2017/12/1/hype-ru-laptops-1514602557-22.jpeg"
-    style={{
-      display: 'block',
-      height: '100%',
-      margin: 'auto',
-      width: '100%'
-    }}
-  />
-  <img
     src="https://content.onliner.by/news/1100x5616/a16847e4a66f2b49f403574d60aab624.jpeg"
     style={{
       display: 'block',
@@ -76,15 +67,6 @@ const HomeCarousel = props =>{
   />
   <img
     src="https://cdn-st3.rtr-vesti.ru/vh/pictures/hd/146/564/2.jpg"
-    style={{
-      display: 'block',
-      height: '100%',
-      margin: 'auto',
-      width: '100%'
-    }}
-  />
-  <img
-    src="https://cdn2.hype.ru/2000x/file/2018/02/1/hype-ru-black-friday-2017-deals-l-1517896081-132.png"
     style={{
       display: 'block',
       height: '100%',

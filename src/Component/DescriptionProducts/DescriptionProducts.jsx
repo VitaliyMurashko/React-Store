@@ -3,7 +3,7 @@ import Carousel from './Carousel/Carousel';
 import s from './DescriptionProducts.module.css';
 import Button from '@material-ui/core/Button';
 import { NavLink } from 'react-router-dom';
-import CatalogItem from '../Catalog/CatalogItem/CatalogItem';
+import CatalogItem from '../../Pages/Catalog/CatalogItem/CatalogItem';
 
 
 const DescriptionProducts = (props) => { 

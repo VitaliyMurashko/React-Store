@@ -2,17 +2,15 @@ import React from 'react';
 import classes from './Card.module.css';
 import s from './Card.module.css';
 import SendReduxForm from './SendForm';
-import { SendDataOrder } from '../../api/api';
 import success from '../../assets/img/Tick_Mark_Dark_icon-icons.com_69147.png';
 import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 
 const Card = props => {
-
   const getTotalAmount = (products) => {
     let totalAmount = 0;
-    products.map(p => {
+    products.forEach(p => {
       if (p.discount !== 0) {
         totalAmount = totalAmount + (p.price - p.price / 100 * p.discount)
       } else {
@@ -28,23 +26,22 @@ const Card = props => {
 
   const clearCard = () => {
     props.removeProductsFromCard();
-    props.handlerSuccessSend();
+    props.successSend('')
   }
-
-  const onSubmit = (formData) => {
-    const OrderData = JSON.stringify({ ...formData, ...props.DataCard })
-    SendDataOrder(OrderData).then(props.handlerSuccessSend()).then(setTimeout(clearCard,4000)).catch(err => alert('Извините,произошла ошибка,попробуйте отправить форму ещё раз'))
-  }
-
+ 
 
   return (
-    props.successSend ? <>
+    
+    props.orderData.length ? <>
       <div>
         <h2>Ваша заявка принята</h2>
+        <span style={{display:'block'}}>
+        <p>ID вашего заказа:</p><strong>{props.orderData}</strong>
+        </span>
         <img src={success} alt="success" />
       </div>
-      <Button variant="contained" color="primary">
-        <NavLink to='/'>Вернуться на главную</NavLink>
+      <Button variant="contained" color="primary" onClick={clearCard}>
+        <NavLink to='/' >Вернуться на главную</NavLink>
       </Button></> :
       <>
         <h2>Корзина</h2>
@@ -69,7 +66,7 @@ const Card = props => {
           </div>
           <div>
             <h2 style={{ padding: "20px 0 20px 0" }}>ваши данные</h2>
-            <SendReduxForm onSubmit={onSubmit} />
+            <SendReduxForm DataCard={props.DataCard} postOrder={props.postOrder}/>
           </div>
         </div>
       </>
